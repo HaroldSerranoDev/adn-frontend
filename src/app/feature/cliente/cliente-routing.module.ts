@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
+import { EditarClienteComponent } from './components/editar-cliente/editar-cliente.component';
 import { ListarClienteComponent } from './components/listar-cliente/listar-cliente.component';
 
 
@@ -16,10 +17,10 @@ const routes: Routes = [
         path: 'crear',
         component: CrearClienteComponent
       },
-      // {
-      //   path: 'borrar',
-      //   component: BorrarClienteComponent
-      // }
+      {
+        path: 'editar',
+        component: EditarClienteComponent
+      }
     ]
   }
 ];

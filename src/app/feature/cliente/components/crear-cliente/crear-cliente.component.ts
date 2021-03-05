@@ -1,13 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { ClienteService } from "../../shared/service/cliente.service";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Cliente } from "@cliente/shared/model/cliente";
-import { SwalService } from "@core/services/swal.service";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ErroresService } from "@core/services/errores.service";
 import { Icon } from "@core/icon.enum";
+import { ErroresService } from "@core/services/errores.service";
+import { SwalService } from "@core/services/swal.service";
+import { ClienteService } from "../../shared/service/cliente.service";
 
-const EL_CLIENTE_HA_SIDO_ACUTALIZADO = "El cliente ha sido actualizado";
 const EL_CLIENTE_HA_SIDO_CREADO = "El cliente ha sido creado.";
 const EXITO = "Éxito";
 const ERROR = "Error";
@@ -15,20 +13,16 @@ const ERROR = "Error";
 @Component({
   selector: "app-crear-cliente",
   templateUrl: "./crear-cliente.component.html",
-  styleUrls: ["./crear-cliente.component.sass"],
 })
 export class CrearClienteComponent implements OnInit {
   clienteForm: FormGroup;
-  cliente: Cliente;
 
   constructor(
     protected clienteService: ClienteService,
     protected swalService: SwalService,
     private router: Router,
     public erroresService: ErroresService
-  ) {
-    this.cliente = this.clienteService.cliente;
-  }
+  ) {}
 
   ngOnInit() {
     this.construirFormularioCliente();
@@ -36,57 +30,31 @@ export class CrearClienteComponent implements OnInit {
 
   private construirFormularioCliente() {
     this.clienteForm = new FormGroup({
-      nombre: new FormControl(
-        this.cliente?.nombre,
-        Validators.required
-      ),
-      direccion: new FormControl(
-        this.cliente?.direccion
-      ),
-      telefono: new FormControl(
-        this.cliente?.telefono,
-        Validators.required
-      ),
-      cedula: new FormControl(
-        this.cliente?.cedula,
-        Validators.required
-      ),
-      correo: new FormControl(
-        this.cliente?.correo
-      ),
+      nombre: new FormControl(null, Validators.required),
+      direccion: new FormControl(null),
+      telefono: new FormControl(null, Validators.required),
+      cedula: new FormControl(null, Validators.required),
+      correo: new FormControl(null),
     });
   }
 
-  agregar() {
-    if (this.clienteForm.valid) {
-      if (this.cliente) {
-        this.clienteService.actualizar(this.clienteForm.value,this.cliente.id).subscribe(
-          () => {
-            this.swalService.alert(EXITO, EL_CLIENTE_HA_SIDO_ACUTALIZADO,Icon.SUCCESS);
-            this.regresar();
-          },
-          (error) => {
-            this.swalService.alert(ERROR, error.mensaje, Icon.ERROR);
-          }
-        );
-      }else{
-        console.log(this.clienteForm.value);
-        this.clienteService.crear(this.clienteForm.value).subscribe(
-          () => {
-            this.swalService.alert(EXITO, EL_CLIENTE_HA_SIDO_CREADO,Icon.SUCCESS);
-            this.regresar();
-          },
-          (error) => {
-            this.swalService.alert(ERROR, error.mensaje, Icon.ERROR);
-          }
-        );
-      }
-    }
-    this.clienteService.crear(this.clienteForm.value);
+  agregar(clienteFormExterno: FormGroup) {
+      this.clienteService.crear(clienteFormExterno.value).subscribe(
+        () => {
+          this.swalService.alert(
+            EXITO,
+            EL_CLIENTE_HA_SIDO_CREADO,
+            Icon.SUCCESS
+          );
+          this.regresar();
+        },
+        (error) => {
+          this.swalService.alert(ERROR, error.mensaje, Icon.ERROR);
+        }
+      );
   }
 
   regresar(): void {
-    this.clienteService.cliente = null;
     this.router.navigate(["/clientes"]);
   }
 }

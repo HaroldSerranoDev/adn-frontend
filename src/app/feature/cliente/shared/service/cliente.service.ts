@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Cliente } from '@cliente/shared/model/cliente';
 import { HttpService } from '@core-service/http.service';
 import { environment } from 'src/environments/environment';
-import { Cliente } from '@cliente/shared/model/cliente';
 
 
 @Injectable()
 export class ClienteService {
 
-   cliente: Cliente;
-   urlClientes: string = "/clientes";
+  cliente: Cliente;
+  urlClientes: string = "/clientes";
 
   constructor(protected http: HttpService) {}
 

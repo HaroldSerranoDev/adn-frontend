@@ -16,8 +16,7 @@ const EXITO = "Éxito";
 const ERROR = "Error";
 @Component({
   selector: "app-listar-cliente",
-  templateUrl: "./listar-cliente.component.html",
-  styleUrls: ["./listar-cliente.component.sass"],
+  templateUrl: "./listar-cliente.component.html"
 })
 export class ListarClienteComponent implements OnInit {
   public clientes: Observable<Cliente[]>;
@@ -38,7 +37,7 @@ export class ListarClienteComponent implements OnInit {
 
   actualizarCliente(cliente: Cliente) {
     this.clienteService.cliente = cliente;
-    this.router.navigate(["/clientes/crear"]);
+    this.router.navigate(["/clientes/editar"]);
   }
 
   borrarCliente(idCliente: number) {
