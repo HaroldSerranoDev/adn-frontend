@@ -39,6 +39,9 @@
       "@moto/*": [
         "src/app/feature/moto/*"
       ],
+      "@alquiler/*": [
+        "src/app/feature/alquiler/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]

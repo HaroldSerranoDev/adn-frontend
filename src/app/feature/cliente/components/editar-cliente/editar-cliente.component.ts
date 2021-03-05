@@ -34,7 +34,7 @@ export class EditarClienteComponent implements OnInit {
   private construirFormularioCliente() {
     this.clienteForm = new FormGroup({
       nombre: new FormControl(this.cliente?.nombre, Validators.required),
-      direccion: new FormControl(this.cliente?.direccion),
+      direccion: new FormControl(this.cliente?.direccion, Validators.required),
       telefono: new FormControl(this.cliente?.telefono, Validators.required),
       cedula: new FormControl(this.cliente?.cedula, Validators.required),
       correo: new FormControl(this.cliente?.correo),
@@ -54,7 +54,7 @@ export class EditarClienteComponent implements OnInit {
           this.regresar();
         },
         (error) => {
-          this.swalService.alert(ERROR, error.mensaje, Icon.ERROR);
+          this.swalService.alert(ERROR, error.error.mensaje, Icon.ERROR);
         }
       );
   }

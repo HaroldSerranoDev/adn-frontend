@@ -29,11 +29,12 @@ export class CrearClienteComponent implements OnInit {
 
   private construirFormularioCliente() {
     this.clienteForm = new FormGroup({
+      id: new FormControl(0),
       nombre: new FormControl(null, Validators.required),
-      direccion: new FormControl(null),
+      direccion: new FormControl(null, Validators.required),
       telefono: new FormControl(null, Validators.required),
       cedula: new FormControl(null, Validators.required),
-      correo: new FormControl(null),
+      correo: new FormControl(null, Validators.required),
     });
   }
 
@@ -48,7 +49,7 @@ export class CrearClienteComponent implements OnInit {
           this.regresar();
         },
         (error) => {
-          this.swalService.alert(ERROR, error.mensaje, Icon.ERROR);
+          this.swalService.alert(ERROR, error.error.mensaje, Icon.ERROR);
         }
       );
   }

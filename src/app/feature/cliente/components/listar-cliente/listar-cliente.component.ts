@@ -57,7 +57,7 @@ export class ListarClienteComponent implements OnInit {
               );
             },
             (error) => {
-              this.swalService.alert(ERROR, error.mensaje, Icon.ERROR);
+              this.swalService.alert(ERROR, error.error.mensaje, Icon.ERROR);
             }
           );
         },

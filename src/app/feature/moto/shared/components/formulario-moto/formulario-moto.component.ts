@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ErroresService } from "@core/services/errores.service";
-import { Moto } from "@moto/shared/model/moto";
 import { MotoService } from "@moto/shared/service/moto.service";
 
 @Component({
@@ -13,8 +12,6 @@ export class FormularioMotoComponent implements OnInit {
   @Input() motoForm: FormGroup;
   @Input() titulo: String;
   @Output() eventoBotonRegistrar = new EventEmitter();
-
-  moto: Moto;
 
   constructor(
     protected motoService: MotoService,
@@ -30,7 +27,7 @@ export class FormularioMotoComponent implements OnInit {
   }
 
   realizarAccionBotonRegistrar() {
-    if(this.motoForm.valid){
+    if (this.motoForm.valid) {
       this.eventoBotonRegistrar.emit(this.motoForm);
     }
   }

@@ -9,6 +9,7 @@ import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { ClienteModule } from './feature/cliente/cliente.module';
 import { MotoModule } from '@moto/moto.module';
+import { AlquilerModule } from '@alquiler/alquiler.module';
 
 
 
@@ -24,6 +25,7 @@ import { MotoModule } from '@moto/moto.module';
     ProductoModule,
     ClienteModule,
     MotoModule,
+    AlquilerModule,
     CoreModule
   ],
   providers: [CookieService],

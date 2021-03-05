@@ -29,12 +29,13 @@ export class CrearMotoComponent implements OnInit {
 
   private construirFormularioMoto() {
     this.motoForm = new FormGroup({
+      id: new FormControl(0),
       matricula: new FormControl(null, Validators.required),
-      marca: new FormControl(null),
+      marca: new FormControl(null, Validators.required),
       modelo: new FormControl(null, Validators.required),
       tipoMoto: new FormControl(null, Validators.required),
-      kilometrosRecorridos: new FormControl(null),
-      precioAlquiler: new FormControl(null),
+      kilometrosRecorridos: new FormControl(null, Validators.required),
+      precioAlquiler: new FormControl(null, Validators.required),
     });
   }
 
@@ -49,7 +50,7 @@ export class CrearMotoComponent implements OnInit {
           this.regresar();
         },
         (error) => {
-          this.swalService.alert(ERROR, error.mensaje, Icon.ERROR);
+          this.swalService.alert(ERROR, error.error.mensaje, Icon.ERROR);
         }
       );
   }

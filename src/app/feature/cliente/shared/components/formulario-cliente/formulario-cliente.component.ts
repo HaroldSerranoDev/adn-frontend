@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
-import { Cliente } from "@cliente/shared/model/cliente";
 import { ClienteService } from "@cliente/shared/service/cliente.service";
 import { ErroresService } from "@core/services/errores.service";
 
@@ -13,8 +12,6 @@ export class FormularioClienteComponent implements OnInit {
   @Input() clienteForm: FormGroup;
   @Input() titulo: String;
   @Output() eventoBotonRegistrar = new EventEmitter();
-
-  cliente: Cliente;
 
   constructor(
     protected clienteService: ClienteService,
