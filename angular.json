@@ -25,10 +25,16 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [ 
-              "src/styles.sass"          
+            "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -92,7 +98,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass" 
+              "src/styles.sass"
             ],
             "scripts": []
           }

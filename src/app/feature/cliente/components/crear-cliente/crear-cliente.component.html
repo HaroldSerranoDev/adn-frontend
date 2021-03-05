@@ -1,0 +1,80 @@
+<div class="row">
+
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Registrar nuevo cliente</h4>
+        <form class="form p-t-20" [formGroup]="clienteForm" (ngSubmit)="agregar()" #ngForm="ngForm">
+
+          <div class="row">
+            <div class="col">
+              <label for="nombre">Nombre:</label>
+              <input formControlName="nombre" name="nombre" id="nombre" type="text" class="form-control" required>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(clienteForm, 'nombre', ngForm).hayErrores">
+                Debe ingresar un nombre
+              </div>
+            </div>
+
+            <div class="col">
+              <label for="correo">Correo electronico:</label>
+              <input formControlName="correo" name="correo" id="correo" type="email" class="form-control">
+              <div class="form-control-feedback text-danger"
+              *ngIf="erroresService.errores(clienteForm, 'correo', ngForm).hayErrores">
+              Debe ingresar un correo electrónico
+            </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col">
+              <label for="telefono">Teléfono / Celular:</label>
+              <input formControlName="telefono" name="telefono" id="telefono" type="number" class="form-control"
+                required>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(clienteForm, 'telefono', ngForm).hayErrores">
+                Debe ingresar un número de teléfono o celular
+              </div>
+            </div>
+
+            <div class="col">
+              <label for="cedula">Cédula:</label>
+              <input formControlName="cedula" name="cedula" id="cedula" type="number" class="form-control" required>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(clienteForm, 'cedula', ngForm).hayErrores">
+                Debe ingresar un número de cédula
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col">
+              <label for="direccion">Dirección:</label>
+              <input formControlName="direccion" name="direccion" id="direccion" type="text" class="form-control"
+                required>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(clienteForm, 'direccion', ngForm).hayErrores">
+                Debe ingresar una dirección
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <button type="button" class="btn btn-danger mr-2" (click)="regresar()">
+              <i class="fa fa-undo"></i> Regresar
+            </button>
+            <button type="submit" class="btn btn-primary" id="registrar">
+              <i class="fa fa-save"></i> Registrar
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

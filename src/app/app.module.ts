@@ -7,6 +7,7 @@ import { HomeComponent } from '@home/home.component';
 import { ProductoModule } from '@producto/producto.module';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
+import { ClienteModule } from './feature/cliente/cliente.module';
 
 
 
@@ -20,6 +21,7 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserModule,
     AppRoutingModule,
     ProductoModule,
+    ClienteModule,
     CoreModule
   ],
   providers: [CookieService],
