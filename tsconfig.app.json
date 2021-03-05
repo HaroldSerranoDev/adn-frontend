@@ -20,6 +20,9 @@
       "@cliente/*": [
         "src/app/feature/cliente/*"
       ],
+      "@moto/*": [
+        "src/app/feature/moto/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]

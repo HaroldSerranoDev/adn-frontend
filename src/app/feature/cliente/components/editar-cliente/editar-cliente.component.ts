@@ -6,10 +6,9 @@ import { SwalService } from "@core/services/swal.service";
 import { Router } from "@angular/router";
 import { ErroresService } from "@core/services/errores.service";
 import { Icon } from "@core/icon.enum";
+import { ERROR, EXITO } from "@shared/constantes/constantes";
 
 const EL_CLIENTE_HA_SIDO_ACTUALIZADO = "El cliente ha sido actualizado";
-const EXITO = "Éxito";
-const ERROR = "Error";
 
 @Component({
   selector: "app-editar-cliente",

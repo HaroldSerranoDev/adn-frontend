@@ -5,15 +5,13 @@ import { ClienteService } from "@cliente/shared/service/cliente.service";
 import { Router } from "@angular/router";
 import { SwalService } from "@core/services/swal.service";
 import { Icon } from "@core/icon.enum";
+import { CONFIRMAR, CANCELAR, EXITO, ERROR } from "@shared/constantes/constantes";
 
 const EL_CLIENTE_HA_SIDO_ELIMINADO = "El cliente ha sido eliminado";
 const ESTA_SEGURO_QUE_DESEA_ELIMINAR_EL_CLIENTE =
   "¿Está seguro que desea eliminar el cliente?";
 const ELIMINACION_DE_CLIENTE = "Eliminación de cliente";
-const CONFIRMAR = "Confimar";
-const CANCELAR = "Cancelar";
-const EXITO = "Éxito";
-const ERROR = "Error";
+
 @Component({
   selector: "app-listar-cliente",
   templateUrl: "./listar-cliente.component.html"

@@ -4,11 +4,10 @@ import { Router } from "@angular/router";
 import { Icon } from "@core/icon.enum";
 import { ErroresService } from "@core/services/errores.service";
 import { SwalService } from "@core/services/swal.service";
+import { ERROR, EXITO } from "@shared/constantes/constantes";
 import { ClienteService } from "../../shared/service/cliente.service";
 
 const EL_CLIENTE_HA_SIDO_CREADO = "El cliente ha sido creado.";
-const EXITO = "Éxito";
-const ERROR = "Error";
 
 @Component({
   selector: "app-crear-cliente",

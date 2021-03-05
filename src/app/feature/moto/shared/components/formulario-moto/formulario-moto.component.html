@@ -1,0 +1,100 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{titulo}} moto</h4>
+        <form class="form p-t-20" [formGroup]="motoForm" (ngSubmit)="realizarAccionBotonRegistrar()" #ngForm="ngForm">
+
+          <div class="row">
+            <div class="col">
+              <label for="matricula">Matricula:</label>
+              <input formControlName="matricula" name="matricula" id="matricula" type="text" class="form-control"
+                required>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(motoForm, 'matricula', ngForm).hayErrores">
+                Debe ingresar una matricula
+              </div>
+            </div>
+
+            <div class="col">
+              <label for="marca">Marca:</label>
+              <select formControlName="marca" name="marca" id="marca" class="form-control" required>
+                <option value="HONDA">HONDA</option>
+                <option value="YAMAHA">YAMAHA</option>
+                <option value="SUZUKI">SUZUKI</option>
+                <option value="BAJAJ">BAJAJ</option>
+                <option value="KAWASAKI">KAWASAKI</option>
+              </select>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(motoForm, 'marca', ngForm).hayErrores">
+                Debe seleccionar una marca
+              </div>
+            </div>
+            <div class="col">
+              <label for="tipoMoto">Tipo de moto:</label>
+
+              <select formControlName="tipoMoto" name="tipoMoto" id="tipoMoto" type="number" class="form-control" required>
+                <option value="SPORT">SPORT</option>
+                <option value="ENDURO">ENDURO</option>
+                <option value="TODO_TERRENO">TODO TERRENO</option>
+                <option value="SCOOTER">SCOOTER</option>
+                <option value="SUPERSPORT">SUPER SPORT</option>
+              </select>
+
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(motoForm, 'tipoMoto', ngForm).hayErrores">
+                Debe selccionar un tipo
+              </div>
+            </div>
+
+          </div>
+
+          <br>
+
+          <div class="row">
+
+            <div class="col">
+              <label for="modelo">Modelo:</label>
+              <input formControlName="modelo" name="modelo" id="modelo" type="number" class="form-control" required>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(motoForm, 'modelo', ngForm).hayErrores">
+                Debe ingresar un modelo
+              </div>
+            </div>
+
+
+            <div class="col">
+              <label for="kilometrosRecorridos">Kilometros recorridos:</label>
+              <input formControlName="kilometrosRecorridos" name="kilometrosRecorridos" id="kilometrosRecorridos"
+                type="number" class="form-control" required>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(motoForm, 'kilometrosRecorridos', ngForm).hayErrores">
+                Debe ingresar los kilometros recorridos
+              </div>
+            </div>
+
+            <div class="col">
+              <label for="precioAlquiler">precioAlquiler:</label>
+              <input formControlName="precioAlquiler" name="precioAlquiler" id="precioAlquiler" type="number"
+                class="form-control" required>
+              <div class="form-control-feedback text-danger"
+                *ngIf="erroresService.errores(motoForm, 'precioAlquiler', ngForm).hayErrores">
+                Debe ingresar un precio de alquiler
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <button type="button" class="btn btn-danger mr-2" (click)="regresar()">
+              <i class="fa fa-undo"></i> Regresar
+            </button>
+            <button type="submit" class="btn btn-primary" id="registrar">
+              <i class="fa fa-save"></i> Registrar
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
