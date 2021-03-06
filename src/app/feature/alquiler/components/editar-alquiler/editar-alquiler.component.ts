@@ -7,6 +7,7 @@ import { Router } from "@angular/router";
 import { ErroresService } from "@core/services/errores.service";
 import { Icon } from "@core/icon.enum";
 import { ERROR, EXITO } from "@shared/constantes/constantes";
+import { formatDate } from '@angular/common';
 
 const EL_ALQUILER_HA_SIDO_ACTUALIZADO = "El alquiler ha sido actualizado";
 
@@ -32,10 +33,9 @@ export class EditarAlquilerComponent implements OnInit {
   }
 
   private construirFormularioAlquiler() {
-    console.log(this.alquiler);
     this.alquilerForm = new FormGroup({
-      fechaAlquiler: new FormControl(this.alquiler?.fechaAlquiler, Validators.required),
-      fechaEntrega: new FormControl(this.alquiler?.fechaEntrega, Validators.required),
+      fechaAlquiler: new FormControl(formatDate(this.alquiler?.fechaAlquiler, 'yyyy-MM-dd', 'en'), Validators.required),
+      fechaEntrega: new FormControl(formatDate(this.alquiler?.fechaEntrega, 'yyyy-MM-dd', 'en'), Validators.required),
       idCliente: new FormControl(this.alquiler?.cliente.id, Validators.required),
       idMoto: new FormControl(this.alquiler?.moto.id, Validators.required)
     });
