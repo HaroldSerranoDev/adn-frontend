@@ -30,9 +30,6 @@
       "@home/*": [
         "src/app/feature/home/*"
       ],
-      "@producto/*": [
-        "src/app/feature/producto/*"
-      ],
       "@cliente/*": [
         "src/app/feature/cliente/*"
       ],
@@ -41,6 +38,9 @@
       ],
       "@alquiler/*": [
         "src/app/feature/alquiler/*"
+      ],
+      "@devolucion/*": [
+        "src/app/feature/devolucion/*"
       ],
       "@shared/*": [
         "src/app/shared/*"

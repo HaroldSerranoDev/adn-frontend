@@ -1,0 +1,38 @@
+<div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class=" row justify-content-end">
+          <button class="btn btn-primary" (click)="crearDevolucion();">
+            <i class="fa fa-plus"></i> Crear devolución
+          </button>
+        </div>
+        <div class="table-responsive-md">
+          <table class="table table-hover">
+            <thead class="text-center">
+              <tr>
+                <th>Alquiler</th>
+                <th>Cliente</th>
+                <th>Moto</th>
+                <th>Fecha devolución</th>
+                <th>Kilometros finales</th>
+                <th>Valor pago final</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr *ngFor="let devolucion of devoluciones | async">
+                <td>Desde: {{ devolucion.alquiler.fechaAlquiler | date:'yyyy-MM-dd' }} Hasta: {{
+                  devolucion.alquiler.fechaEntrega | date:'yyyy-MM-dd' }}</td>
+                <td>{{ devolucion.alquiler.cliente.cedula }} - {{ devolucion.alquiler.cliente.nombre }} </td>
+                <td>{{ devolucion.alquiler.moto.matricula }} - {{ devolucion.alquiler.moto.marca }}</td>
+                <td>{{ devolucion.fechaDevolucion | date:'yyyy-MM-dd' }}</td>
+                <td>{{ devolucion.kilometrosFinales }}</td>
+                <td>{{ devolucion.valorPagoFinal | currency }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

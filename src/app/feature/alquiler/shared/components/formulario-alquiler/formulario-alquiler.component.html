@@ -18,7 +18,7 @@
             </div>
 
             <div class="col">
-              <label for="fechaEntrega">Fecha alquiler:</label>
+              <label for="fechaEntrega">Fecha entrega:</label>
               <input formControlName="fechaEntrega" name="fechaEntrega" id="fechaEntrega" type="date"
                 placeholder="yyy-mm-dd" class="form-control" required>
               <div class="form-control-feedback text-danger"
@@ -31,7 +31,7 @@
           <br>
           <div class="row">
             <div class="col">
-              <label for="idCliente">Cliente</label>
+              <label for="idCliente">Cliente:</label>
               <select formControlName="idCliente" name="idCliente" id="idCliente" class="form-control" required>
                 <option *ngFor="let cliente of clientes|async" [value]="cliente.id">{{cliente.cedula}} -
                   {{cliente.nombre}}</option>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="col">
-              <label for="idMoto">Moto</label>
+              <label for="idMoto">Moto:</label>
               <select formControlName="idMoto" name="idMoto" id="idMoto" class="form-control" required>
                 <option *ngFor="let moto of motos|async" [value]="moto.id">{{moto.matricula}} - {{moto.marca}}</option>
               </select>
