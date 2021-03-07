@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-body">
         <div class=" row justify-content-end">
-          <button class="btn btn-primary" (click)="crearAlquiler();">
+          <button class="btn btn-primary" (click)="crearAlquiler();" id="linkCrearAlquiler">
             <i class="fa fa-plus"></i> Crear alquiler
           </button>
         </div>
@@ -20,19 +20,19 @@
               </tr>
             </thead>
             <tbody class="text-center">
-              <tr *ngFor="let alquiler of alquilers | async">
+              <tr *ngFor="let alquiler of alquilers | async" class="tablaAlquileres">
                 <td>{{ alquiler.cliente.cedula }} - {{ alquiler.cliente.nombre }}</td>
                 <td>{{ alquiler.moto.matricula }} - {{ alquiler.moto.marca }}</td>
                 <td>{{ alquiler.fechaAlquiler | date:'yyyy-MM-dd'}}</td>
                 <td>{{ alquiler.fechaEntrega | date:'yyyy-MM-dd'}}</td>
                 <td>{{ alquiler.valorPago | currency }}</td>
                 <td class="row justify-content-center">
-                  <button class="btn btn-primary mr-sm-1 own-p-btn" title="Editar alquiler"
-                    (click)="actualizarAlquiler(alquiler)">
+                  <button class="btn btn-primary mr-sm-1 own-p-btn linkEditarAlquiler" title="Editar alquiler"
+                    (click)="actualizarAlquiler(alquiler)" [id]="'linkEditarAlquiler'+ alquiler.id">
                     <i class="fa fa-edit"></i>
                   </button>
-                  <button class="btn btn-danger own-p-btn" title="Eliminar alquiler"
-                    (click)="borrarAlquiler(alquiler.id)">
+                  <button class="btn btn-danger own-p-btn linkEliminarAlquiler" title="Eliminar alquiler"
+                    (click)="borrarAlquiler(alquiler.id)" [id]="'linkEliminarAlquiler'+ alquiler.id">
                     <i class="fa fa-trash"></i>
                   </button>
                 </td>

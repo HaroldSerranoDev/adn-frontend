@@ -33,7 +33,7 @@
             <div class="col">
               <label for="idCliente">Cliente:</label>
               <select formControlName="idCliente" name="idCliente" id="idCliente" class="form-control" required>
-                <option *ngFor="let cliente of clientes|async" [value]="cliente.id">{{cliente.cedula}} -
+                <option *ngFor="let cliente of clientes|async" [value]="cliente.id" class="clientes">{{cliente.cedula}} -
                   {{cliente.nombre}}</option>
               </select>
               <div class="form-control-feedback text-danger"
@@ -45,7 +45,7 @@
             <div class="col">
               <label for="idMoto">Moto:</label>
               <select formControlName="idMoto" name="idMoto" id="idMoto" class="form-control" required>
-                <option *ngFor="let moto of motos|async" [value]="moto.id">{{moto.matricula}} - {{moto.marca}}</option>
+                <option *ngFor="let moto of motos|async" class="motos" [value]="moto.id">{{moto.matricula}} - {{moto.marca}}</option>
               </select>
               <div class="form-control-feedback text-danger"
                 *ngIf="erroresService.errores(alquilerForm, 'idMoto', ngForm).hayErrores">

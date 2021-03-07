@@ -22,7 +22,7 @@ describe("Listar clientes", () => {
     browser.sleep(300);
     //assert
     expect(3).toBe(listarClientes.contarClientes());
-    browser.sleep(300);
+    browser.sleep(500);
   });
 
 });

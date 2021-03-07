@@ -4,7 +4,7 @@ import { FormularioMoto } from "../../page/moto/formulario-moto.po";
 import { ListarMotos } from "../../page/moto/listar-motos.po";
 import { NavbarPage } from "../../page/navbar/navbar.po";
 
-describe("Crear moto", () => {
+describe("Editar moto", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarMotos: ListarMotos;
