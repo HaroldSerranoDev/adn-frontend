@@ -10,7 +10,7 @@
             <div class="col">
               <label for="idAlquiler">Alquiler</label>
               <select formControlName="idAlquiler" name="idAlquiler" id="idAlquiler" class="form-control" required>
-                <option *ngFor="let alquiler of alquileres|async" [value]="alquiler.id">{{alquiler.cliente.cedula}} -
+                <option *ngFor="let alquiler of alquileres|async" [value]="alquiler.id" class="alquileres">{{alquiler.cliente.cedula}} -
                   {{alquiler.cliente.nombre}} || {{alquiler.moto.matricula}} -
                   {{alquiler.moto.marca}} || De: {{alquiler.fechaAlquiler | date: 'yyyy-MM-dd'}} Hasta: {{alquiler.fechaEntrega | date: 'yyyy-MM-dd'}}</option>
               </select>

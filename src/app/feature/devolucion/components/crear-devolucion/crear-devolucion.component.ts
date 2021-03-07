@@ -7,7 +7,7 @@ import { SwalService } from "@core/services/swal.service";
 import { ERROR, EXITO } from "@shared/constantes/constantes";
 import { DevolucionService } from "../../shared/service/devolucion.service";
 
-const EL_CLIENTE_HA_SIDO_CREADO = "El devolucion ha sido creado.";
+const LA_DEVOLUCION_HA_SIDO_CREADA = "El devolucion ha sido creado.";
 
 @Component({
   selector: "app-crear-devolucion",
@@ -40,7 +40,7 @@ export class CrearDevolucionComponent implements OnInit {
         () => {
           this.swalService.alert(
             EXITO,
-            EL_CLIENTE_HA_SIDO_CREADO,
+            LA_DEVOLUCION_HA_SIDO_CREADA,
             Icon.SUCCESS
           );
           this.regresar();
