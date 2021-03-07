@@ -4,7 +4,7 @@ import { NavbarPage } from "../../page/navbar/navbar.po";
 import { FormularioCliente } from "../../page/cliente/formulario-cliente.po";
 import { ListarClientes } from "../../page/cliente/listar-clientes.po";
 
-describe("workspace-project Producto", () => {
+describe("Crear Cliente", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarClientes: ListarClientes;

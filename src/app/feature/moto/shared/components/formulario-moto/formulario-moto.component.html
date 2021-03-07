@@ -19,11 +19,11 @@
             <div class="col">
               <label for="marca">Marca:</label>
               <select formControlName="marca" name="marca" id="marca" class="form-control" required>
-                <option value="HONDA">HONDA</option>
-                <option value="YAMAHA">YAMAHA</option>
-                <option value="SUZUKI">SUZUKI</option>
-                <option value="BAJAJ">BAJAJ</option>
-                <option value="KAWASAKI">KAWASAKI</option>
+                <option class="HONDA" value="HONDA">HONDA</option>
+                <option class="YAMAHA" value="YAMAHA">YAMAHA</option>
+                <option class="SUZUKI" value="SUZUKI">SUZUKI</option>
+                <option class="BAJAJ" value="BAJAJ">BAJAJ</option>
+                <option class="KAWASAKI" value="KAWASAKI">KAWASAKI</option>
               </select>
               <div class="form-control-feedback text-danger"
                 *ngIf="erroresService.errores(motoForm, 'marca', ngForm).hayErrores">
@@ -34,11 +34,11 @@
               <label for="tipoMoto">Tipo de moto:</label>
 
               <select formControlName="tipoMoto" name="tipoMoto" id="tipoMoto" type="number" class="form-control" required>
-                <option value="SPORT">SPORT</option>
-                <option value="ENDURO">ENDURO</option>
-                <option value="TODO_TERRENO">TODO TERRENO</option>
-                <option value="SCOOTER">SCOOTER</option>
-                <option value="SUPERSPORT">SUPER SPORT</option>
+                <option class="SPORT" value="SPORT">SPORT</option>
+                <option class="ENDURO" value="ENDURO">ENDURO</option>
+                <option class="TODO_TERRENO" value="TODO_TERRENO">TODO TERRENO</option>
+                <option class="SCOOTER" value="SCOOTER">SCOOTER</option>
+                <option class="SUPERSPORT" value="SUPERSPORT">SUPER SPORT</option>
               </select>
 
               <div class="form-control-feedback text-danger"

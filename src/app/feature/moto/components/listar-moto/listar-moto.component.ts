@@ -7,7 +7,7 @@ import { SwalService } from "@core/services/swal.service";
 import { Icon } from "@core/icon.enum";
 import { CANCELAR, CONFIRMAR, ERROR, EXITO } from "@shared/constantes/constantes";
 
-const LA_MOTO_HA_SIDO_ELIMINADO = "La moto ha sido eliminada";
+const LA_MOTO_HA_SIDO_ELIMINADA = "La moto ha sido eliminada";
 const ESTA_SEGURO_QUE_DESEA_ELIMINAR_LA_MOTO =
   "¿Está seguro que desea eliminar la moto?";
 const ELIMINACION_DE_CLIENTE = "Eliminación de moto";
@@ -52,7 +52,7 @@ export class ListarMotoComponent implements OnInit {
               this.motos = this.motoService.consultar();
               this.swalService.alert(
                 EXITO,
-                LA_MOTO_HA_SIDO_ELIMINADO,
+                LA_MOTO_HA_SIDO_ELIMINADA,
                 Icon.SUCCESS
               );
             },

@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-body">
         <div class=" row justify-content-end">
-          <button class="btn btn-primary" (click)="crearMoto();">
+          <button class="btn btn-primary" (click)="crearMoto();" id="linkCrearMoto">
             <i class="fa fa-plus"></i> Crear moto
           </button>
         </div>
@@ -21,7 +21,7 @@
               </tr>
             </thead>
             <tbody class="text-center">
-              <tr *ngFor="let moto of motos | async">
+              <tr *ngFor="let moto of motos | async"  class="tablaMotos">
                 <td>{{ moto.matricula }}</td>
                 <td>{{ moto.marca }}</td>
                 <td>{{ moto.modelo }}</td>
@@ -29,10 +29,10 @@
                 <td>{{ moto.kilometrosRecorridos }}</td>
                 <td>{{ moto.precioAlquiler | currency}}</td>
                 <td class="row justify-content-center">
-                  <button class="btn btn-primary mr-sm-1 own-p-btn" title="Editar moto" (click)="actualizarMoto(moto)">
+                  <button class="btn btn-primary mr-sm-1 own-p-btn linkEditarMoto" title="Editar moto" (click)="actualizarMoto(moto)" [id]="'linkEditarMoto'+ moto.id">
                     <i class="fa fa-edit"></i>
                   </button>
-                  <button class="btn btn-danger own-p-btn" title="Eliminar moto" (click)="borrarMoto(moto.id)">
+                  <button class="btn btn-danger own-p-btn linkEliminarMoto" title="Eliminar moto" (click)="borrarMoto(moto.id)" [id]="'linkEliminarMoto'+moto.id">
                     <i class="fa fa-trash"></i>
                   </button>
                 </td>

@@ -3,7 +3,7 @@ import { AppPage } from "../../app.po";
 import { NavbarPage } from "../../page/navbar/navbar.po";
 import { ListarClientes } from "../../page/cliente/listar-clientes.po";
 
-describe("workspace-project Producto", () => {
+describe("Eliminar Cliente", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarClientes: ListarClientes;
