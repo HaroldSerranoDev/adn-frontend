@@ -2,7 +2,7 @@
   "/alquiler-motos/*": {
     "target": "http://localhost:8084",
     "secure" : false,
-    "changeOrigin": true
+    "logLevel": "debug"
   }
 
 }
