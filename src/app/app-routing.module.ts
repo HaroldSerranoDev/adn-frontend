@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'clientes', loadChildren: () => import('@cliente/cliente.module').then(mod => mod.ClienteModule) },
   { path: 'motos', loadChildren: () => import('@moto/moto.module').then(mod => mod.MotoModule) },
   { path: 'alquileres', loadChildren: () => import('@alquiler/alquiler.module').then(mod => mod.AlquilerModule) },
-  { path: 'devoluciones', loadChildren: () => import('@devolucion/devolucion.module').then(mod => mod.DevolucionModule) }
+  { path: 'devoluciones', loadChildren: () => import('@devolucion/devolucion.module').then(mod => mod.DevolucionModule) },
+  { path: 'cola-mensajeria', loadChildren: () => import('@colaMensajeria/cola-mensajeria.module').then(mod => mod.ColaMesajeriaModule) }
 ];
 
 @NgModule({

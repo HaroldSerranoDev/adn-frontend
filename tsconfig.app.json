@@ -26,6 +26,9 @@
       "@devolucion/*": [
         "src/app/feature/devolucion/*"
       ],
+      "@colaMensajeria/*": [
+        "src/app/feature/cola-mensajeria/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]

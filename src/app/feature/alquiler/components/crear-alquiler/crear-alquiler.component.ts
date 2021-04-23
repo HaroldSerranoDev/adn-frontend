@@ -38,7 +38,6 @@ export class CrearAlquilerComponent implements OnInit {
   }
 
   agregar(alquilerFormExterno: FormGroup) {
-    console.log(alquilerFormExterno.value);
       this.alquilerService.crear(alquilerFormExterno.value).subscribe(
         () => {
           this.swalService.alert(
@@ -49,7 +48,6 @@ export class CrearAlquilerComponent implements OnInit {
           this.regresar();
         },
         (error) => {
-          console.log(error);
           this.swalService.alert(ERROR, error.error.mensaje, Icon.ERROR);
         }
       );

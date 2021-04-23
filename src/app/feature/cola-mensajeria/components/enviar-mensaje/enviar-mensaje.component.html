@@ -1,0 +1,19 @@
+<h4 class="card-title">Enviar mensaje</h4>
+<form class="form p-t-20" [formGroup]="enviarMensajeForm" (ngSubmit)="enviar()" #ngForm="ngForm">
+
+  <div class="row">
+    <div class="col">
+      <label for="mensaje">Mensaje:</label>
+      <input formControlName="mensaje" name="mensaje" id="mensaje" type="text" class="form-control" required>
+      <div class="form-control-feedback text-danger"
+        *ngIf="erroresService.errores(enviarMensajeForm, 'mensaje', ngForm).hayErrores">
+        Debe ingresar un mensaje
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <button type="submit" class="btn btn-primary" id="registrar">
+      <i class="fa fa-paper-plane"></i> Enviar
+    </button>
+  </div>
+</form>

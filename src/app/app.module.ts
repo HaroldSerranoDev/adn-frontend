@@ -1,14 +1,11 @@
-import { AlquilerModule } from '@alquiler/alquiler.module';
+import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from '@core/core.module';
-import { DevolucionModule } from '@devolucion/devolucion.module';
 import { HomeComponent } from '@home/home.component';
-import { MotoModule } from '@moto/moto.module';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClienteModule } from './feature/cliente/cliente.module';
 
 
 
@@ -22,10 +19,13 @@ import { ClienteModule } from './feature/cliente/cliente.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ClienteModule,
-    MotoModule,
-    AlquilerModule,
-    DevolucionModule,
+    // ClienteModule,
+    // MotoModule,
+    // AlquilerModule,
+    // DevolucionModule,
+    // ColaMesajeriaModule,
+    // SharedModule,
+    HttpClientModule,
     CoreModule
   ],
   providers: [CookieService],

@@ -1,0 +1,19 @@
+<h4 class="card-title">Recibir mensaje</h4>
+<form class="form p-t-20" [formGroup]="recibirMensajeForm" (ngSubmit)="recibir()" #ngForm="ngForm">
+
+  <div class="row">
+    <div class="col">
+      <label for="nombreCola">Nombre cola de mensajería</label>
+      <input formControlName="nombreCola" name="nombreCola" id="nombreCola" type="text" class="form-control" required>
+      <div class="form-control-feedback text-danger"
+        *ngIf="erroresService.errores(recibirMensajeForm, 'nombreCola', ngForm).hayErrores">
+        Debe ingresar un nombre de cola de mensajeria
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <button type="submit" class="btn btn-primary" id="recibir">
+      <i class="fa fa-inbox"></i> Recibir
+    </button>
+  </div>
+</form>
