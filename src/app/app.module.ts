@@ -19,12 +19,6 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // ClienteModule,
-    // MotoModule,
-    // AlquilerModule,
-    // DevolucionModule,
-    // ColaMesajeriaModule,
-    // SharedModule,
     HttpClientModule,
     CoreModule
   ],

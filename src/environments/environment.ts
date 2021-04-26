@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpoint: '/alquiler-motos'
+  endpoint: 'http://localhost:8084/alquiler-motos'
+  // endpoint: '/alquiler-motos'
 };
 
 /*

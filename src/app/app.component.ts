@@ -15,6 +15,7 @@ export class AppComponent {
     { url: '/motos', nombre: 'motos', data:'motosNav'},
     { url: '/alquileres', nombre: 'alquileres', data:'alquileresNav' },
     { url: '/devoluciones', nombre: 'devoluciones', data:'devolucionesNav' },
-    { url: '/cola-mensajeria', nombre: 'cola mensajería', data:'colaMenajeriaNav' }
+    { url: '/cola-mensajeria', nombre: 'cola mensajería', data:'colaMenajeriaNav' },
+    { url: '/archivos', nombre: 'archivos', data:'archiviosNav' }
   ];
 }

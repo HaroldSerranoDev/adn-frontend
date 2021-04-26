@@ -45,6 +45,9 @@
       "@colaMensajeria/*": [
         "src/app/feature/cola-mensajeria/*"
       ],
+      "@archivo/*": [
+        "src/app/feature/archivo/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]

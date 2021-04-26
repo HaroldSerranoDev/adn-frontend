@@ -1,0 +1,19 @@
+<h4 class="card-title">Enviar archivo</h4>
+<form class="form p-t-20" [formGroup]="enviarArchivoForm" (ngSubmit)="enviar()" #ngForm="ngForm">
+
+  <div class="row">
+    <div class="col">
+      <label for="archivo">Archivo:</label>
+      <input formControlName="archivo" name="archivo" id="archivo" type="file" class="form-control" required (change)="cambioInputFile($event)">
+      <div class="form-control-feedback text-danger"
+        *ngIf="erroresService.errores(enviarArchivoForm, 'archivo', ngForm).hayErrores">
+        Debe ingresar un archivo
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <button type="submit" class="btn btn-primary" id="registrar">
+      <i class="fa fa-paper-plane"></i> Enviar
+    </button>
+  </div>
+</form>

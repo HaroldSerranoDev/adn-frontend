@@ -1,0 +1,19 @@
+<h4 class="card-title">Recibir archivo</h4>
+<form class="form p-t-20" [formGroup]="recibiArchivoForm" (ngSubmit)="recibir()" #ngForm="ngForm">
+
+  <div class="row">
+    <div class="col">
+      <label for="nombreArchivo">Nombre archivo</label>
+      <input formControlName="nombreArchivo" name="nombreArchivo" id="nombreArchivo" type="text" class="form-control" placeholder="ejemplo.png" required>
+      <div class="form-control-feedback text-danger"
+        *ngIf="erroresService.errores(recibiArchivoForm, 'nombreArchivo', ngForm).hayErrores">
+        Debe ingresar un nombre de archivo
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+    <button type="submit" class="btn btn-primary" id="recibir">
+      <i class="fa fa-inbox"></i> Recibir
+    </button>
+  </div>
+</form>
